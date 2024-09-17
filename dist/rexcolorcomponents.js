@@ -16072,7 +16072,7 @@
                 context.fillStyle = textStyle.backgroundColor;
 
                 var x = this.drawTLX;
-                var width = this.drawTRX - x;
+                var width = this.drawTRX - x + 1; // Add extra 1 pixel width
 
                 var bottomY = textStyle.backgroundBottomY;
                 if (bottomY == null) {
@@ -32092,7 +32092,7 @@
             this.execeedTopState = false;
             this.execeedBottomState = false;
 
-            this.setClampMode(GetValue$9(config, 'clamplTextOY', true));
+            this.setClampMode(GetValue$9(config, 'clampTextOY', true));
 
             this.alwaysScrollable = GetValue$9(config, 'alwaysScrollable', false);
 
@@ -32413,7 +32413,7 @@
                 textMask: textMask,
                 textCrop: textCrop && !textMask,
                 content: content,
-                clamplTextOY: GetValue$8(config, 'clampChildOY', false),
+                clampTextOY: GetValue$8(config, 'clampChildOY', false),
                 alwaysScrollable: GetValue$8(config, 'alwaysScrollable', false),
             });
             scene.add.existing(textBlock); // Important: Add to display list for touch detecting
